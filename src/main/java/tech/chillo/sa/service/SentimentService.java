@@ -1,6 +1,5 @@
 package tech.chillo.sa.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.chillo.sa.entites.Client;
 import tech.chillo.sa.entites.Sentiment;
