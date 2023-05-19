@@ -1,5 +1,6 @@
 package tech.chillo.sa.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import tech.chillo.sa.entites.Client;
 import tech.chillo.sa.repository.ClientRepository;
@@ -29,7 +30,9 @@ public class ClientService {
 
     public Client lire(int id) {
         Optional<Client> optionalClient = this.clientRepository.findById(id);
-        return optionalClient.orElse(null);
+        return optionalClient.orElseThrow(
+                () -> new EntityNotFoundException("Aucun client n'existe avec cet id")
+        );
     }
 
     public Client lireOuCreer(Client clientAcreer){
