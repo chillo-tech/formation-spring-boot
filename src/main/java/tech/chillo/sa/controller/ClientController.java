@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import tech.chillo.sa.dto.ClientDTO;
 import tech.chillo.sa.dto.ErrorEntity;
 import tech.chillo.sa.entites.Client;
 import tech.chillo.sa.service.ClientService;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
@@ -37,7 +39,7 @@ public class ClientController {
     }
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)
-    public List<Client> rechercher() {
+    public Stream<ClientDTO> rechercher() {
         return this.clientService.rechercher();
     }
 
