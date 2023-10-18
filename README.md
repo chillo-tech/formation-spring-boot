@@ -1,4 +1,4 @@
-#Instructions pour exécuter ce projet en local
+# Instructions pour exécuter ce projet en local
 
 ## Cloner le projet
 ```
