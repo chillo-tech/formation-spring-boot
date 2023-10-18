@@ -29,7 +29,7 @@ public class ClientService {
 
     public Stream<ClientDTO> rechercher() {
         return this.clientRepository.findAll()
-                .stream().map(clientDTOMapper);
+                        .stream().map(clientDTOMapper);
     }
 
     public Client lire(int id) {
